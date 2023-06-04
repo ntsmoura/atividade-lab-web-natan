@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="estilo.css">
+<html>
+    <title>IMC</title>
+    <body>
+        <div class="div-result">
+            <p id="nome"></p>
+            <p id="imc"></p>
+            <p id="classificacao"></p>
+            <p id="comorbidade"></p>
+            <button onclick="retornarIndex()">Voltar</button>
+        </div>
+    </body>
+</html>
+<script>
+    window.onload = () => {
+        let imc = localStorage.getItem("resultadoImc");
+        let nome = localStorage.getItem("nome");
+        document.getElementById("nome").innerHTML = `Olá ${nome}!`;
+        document.getElementById("imc").innerHTML = `Seu IMC é: ${imc}.`;
+        let classificacao = "";
+        let comorbidade = "";
+        if (imc < 18.5){
+            classificacao = "baixo peso";
+            comorbidade = "baixo";
+        }
+        else if (imc >= 18.5 && imc < 24.9) {
+            classificacao = "peso normal";
+            comorbidade = "médio";
+        }
+        else if (imc >= 25 && imc < 29.9){
+            classificacao = "pré-obeso";
+            comorbidade = "aumentado";
+        }
+        else if (imc >= 30 && imc < 34.9){
+            classificacao = "obeso I";
+            comorbidade = "moderado";
+        }
+        else if (imc >= 35 && imc < 39.9){
+            classificacao = "obeso II";
+            comorbidade = "grave";
+        }
+        else if (imc>=40){
+            classificacao = "obeso III";
+            comorbidade = "muito grave";
+        }
+        document.getElementById("classificacao").innerHTML = `Sua classificação é ${classificacao}.`;
+        document.getElementById("comorbidade").innerHTML = `Seu risco de comorbidades é ${comorbidade}.`;
+    }
+
+    function retornarIndex(){
+        localStorage.removeItem("resultadoImc");
+        localStorage.removeItem("nome");
+        window.location.href = "index.html";
+    }
+</script>

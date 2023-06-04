@@ -1,0 +1,64 @@
+body{
+    background: #B9A9A6;
+    display: flex;
+    justify-content: center;
+    height: 90vh;
+    align-items: center;
+}
+
+.form-imc{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    border-radius: 5px;
+    flex-direction: column;
+    width: 200px;
+    height: 200px;
+    flex-wrap: wrap;
+}
+
+button{
+    border-radius: 5px;
+    border-style: solid;
+    border-color: thistle
+}
+
+.div-result{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    border-radius: 5px;
+    flex-direction: column;
+    width: 400px;
+    height: 200px;
+    flex-wrap: wrap;
+}
+
+label{
+    font-family: 'Courier New', Courier, monospace;
+    color:black;
+}
+
+h1{
+    font-family: 'Courier New', Courier, monospace;
+    color:rgb(82, 75, 75);
+    font-size: 16px;
+}
+
+p{
+    font-family: 'Courier New', Courier, monospace;
+    color:black;
+    font-size: 14px;
+}
+
+input{
+    border-radius: 5px;
+    border-style: solid;
+    border-color: thistle
+}
+
+.input-submit{
+    margin-top: 5px;
+}
